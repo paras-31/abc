@@ -41,11 +41,14 @@ jobs:
  
       - name: terraform init
         run: |
-            terraform init -reconfigure -backend-config="bucket=$BUCKET" -backend-config="key=$TFSTATE_FILE"
-
+             terraform init -reconfigure 
       - name: terraform plan
         run: |
             terraform plan
+
+
+
+# -backend-config="bucket=$BUCKET" -backend-config="key=$TFSTATE_FILE"
   # job2:
   #   need: terraform_actions
   #   name: terraform
