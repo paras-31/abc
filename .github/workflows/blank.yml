@@ -41,10 +41,18 @@ jobs:
  
       - name: terraform init
         run: |
-             terraform init -backend-config="bucket=$BUCKET" -backend-config="key=$TFSTATE_FILE"
+             terraform init 
+      - name: terraform plan
+        run: |
+             terraform plan -backend-config="bucket=$BUCKET" -backend-config="key=$TFSTATE_FILE"
+
+      # - name: terraform apply
+      #   run: |
+      #        terraform apply -backend-config="bucket=$BUCKET" -backend-config="key=$TFSTATE_FILE"
 
 
-
+             
+            
 
 # -backend-config="bucket=$BUCKET" -backend-config="key=$TFSTATE_FILE"
   # job1:
